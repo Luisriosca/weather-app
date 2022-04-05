@@ -15,7 +15,7 @@
   box-sizing: border-box;
 }
 .App{
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,4 +49,30 @@ html{
 
   grid-template-columns: 30% 35% 35%;
   grid-template-rows: 2fr 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+  }
+  .container{
+    min-width: 90vw;
+    height: 130vh;
+    border-radius: 3rem;
+    box-shadow:.8rem .8rem 1.4rem var(--greyLight-2), 
+              -.2rem -.2rem 1.8rem var(--white);
+    padding: 1.2rem;
+    display: grid;
+
+    align-items: center;
+    
+    grid-template:
+      "current " 
+      "otherinfo";
+    grid-template-rows: 60% 40%;
+    gap: 1rem;
+  }
 }

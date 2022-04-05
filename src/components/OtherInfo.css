@@ -1,8 +1,8 @@
 .OtherInfo{
     grid-area: otherinfo;
     height: 100%;
-    margin: 1rem;
-    padding: 1.2rem;
+    /* margin: 1.4rem; */
+    padding: 1.5rem;
     background: var(--greyLight-1);
     border-radius: inherit;
     box-shadow: inset 9.91px 9.91px 15px #CFD6DF, inset -9.91px -9.91px 15px #F9FFFF;
@@ -10,7 +10,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    /* gap: 1rem; */
+}
+.OtherInfo > * {
+    margin-top: 1rem;
 }
 
 .iconlabel{

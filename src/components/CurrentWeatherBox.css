@@ -1,7 +1,7 @@
 .CurrentWeatherBox{
     height: 100%;
     grid-area: current;
-    margin: 1rem;
+    /* margin: 1rem; */
     padding: 1.2rem;
     background: var(--greyLight-1);
     border-radius: inherit;
