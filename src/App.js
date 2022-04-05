@@ -8,11 +8,7 @@ import getWeatherInfo from './services/getWeatherInfo'
 
 function App() {
   //*Using state for set my critical information
-  //*---------------Position--------------------
-  const [lat, setLat] = useState([]);
-  const [long, setLong] = useState([]);
   //*---------------All data--------------------
-  const [data, setData] = useState([]);
   //*---------------Location info---------------  
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
@@ -21,7 +17,7 @@ function App() {
   const [description, setDescription] = useState('');
   const [icon, setIcon] = useState('');  
   const [tempCelsius, setTempCelsius] = useState('');  
-  const [tempFarenheit, setFarenheit] = useState('');
+  // const [tempFarenheit, setFarenheit] = useState('');
   const [feelsLike, setFeelsLike] = useState('');
   //*---------------Other data-------------------
   const [windSpeed, setWindSpeed] = useState('');
