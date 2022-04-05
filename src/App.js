@@ -28,7 +28,7 @@ function App() {
     navigator.geolocation.getCurrentPosition(function(position) {
       getWeatherInfo(position.coords.latitude, position.coords.longitude).then((response) => {
         console.log(response.data);
-        setData(response.data);
+        // setData(response.data);
         setCity(response.data['name'])
         setCountry(response.data['sys']['country'])
         setMain(response.data['weather'][0]['main'])
