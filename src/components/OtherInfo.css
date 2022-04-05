@@ -1,0 +1,22 @@
+.OtherInfo{
+    grid-area: otherinfo;
+    height: 100%;
+    margin: 1rem;
+    padding: 1.2rem;
+    background: var(--greyLight-1);
+    border-radius: inherit;
+    box-shadow: inset 9.91px 9.91px 15px #CFD6DF, inset -9.91px -9.91px 15px #F9FFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+.icon{
+    width: 100px;
+}
+.icon-labe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
