@@ -11,9 +11,31 @@
 }
 
 .CurrentWeatherBox > * {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .center-self{
     align-self: center;
+}
+button{
+    background-color: var(--greyLight-1);
+    width: 50%;
+    height: 2rem;
+    align-self: center;
+    border-radius: inherit;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    box-shadow: inset 9.91px 9.91px 15px #B6BBD5, inset -9.91px -9.91px 15px #DAE1FF;
+}
+
+button:hover{
+    background-color: #bec8e4;
+    color: black;
+}
+
+button:active{
+    /* background-color: #bec8e4; */
+    /* border: #F9FFFF 1px solid; */
+    box-shadow: inset 9.91px 9.91px 15px #bec8e4, inset -9.91px -9.91px 15px whitesmoke;
+
 }

@@ -13,7 +13,7 @@ export default function title({city, country, icon, main, description, tempCelsi
         <p className="center-self">{description}</p>
         <h4>Temp: {tempCelsius + '°C'}</h4>
         <h4>Feels Like: {feelsLike + '°C'}</h4>
-        <button>Change to Farenheit</button>
+        <button className='btn'>to Farenheit</button>
     </div>
   )
 }

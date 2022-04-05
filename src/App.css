@@ -26,8 +26,8 @@ html{
 }
 
 .container{
-  width: 90vw;
-  height: 70vh;
+  min-width: 90vw;
+  height: 90vh;
   border-radius: 3rem;
   box-shadow:.8rem .8rem 1.4rem var(--greyLight-2), 
             -.2rem -.2rem 1.8rem var(--white);

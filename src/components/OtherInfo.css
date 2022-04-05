@@ -7,16 +7,20 @@
     border-radius: inherit;
     box-shadow: inset 9.91px 9.91px 15px #CFD6DF, inset -9.91px -9.91px 15px #F9FFFF;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 1rem;
 }
-.icon{
-    width: 100px;
-}
-.icon-labe{
+
+.iconlabel{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+box-icon{
+    align-self: center;
 }
