@@ -1,7 +1,7 @@
 .OtherInfo{
     grid-area: otherinfo;
     height: 100%;
-    /* margin: 1.4rem; */
+    margin: 1rem;
     padding: 1.5rem;
     background: var(--greyLight-1);
     border-radius: inherit;
