@@ -4,11 +4,11 @@ import OtherInfo from './components/OtherInfo';
 import CurrentWeatherBox from './components/CurrentWeatherBox';
 
 import getWeatherInfo from './services/getWeatherInfo'
+import Loader from './components/Loader';
 
 
 function App() {
   //*Using state for set my critical information
-  //*---------------All data--------------------
   //*---------------Location info---------------  
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
@@ -23,12 +23,14 @@ function App() {
   const [windSpeed, setWindSpeed] = useState('');
   const [humidity, setHumidity] = useState('');
   const [seaLevel, setSeaLevel] = useState('');
-  
+  //*---------------Indicators-------------------
+  const [isDataLoaded, setIsDataLoad] = useState(false)
+   
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       getWeatherInfo(position.coords.latitude, position.coords.longitude).then((response) => {
         console.log(response.data);
-        // setData(response.data);
+        setIsDataLoad(true)
         setCity(response.data['name'])
         setCountry(response.data['sys']['country'])
         setMain(response.data['weather'][0]['main'])
@@ -45,10 +47,10 @@ function App() {
   
   return (
     <div className="App">
-      <div className="container">
+      {isDataLoaded ? <div className="container">
           <CurrentWeatherBox className="TitleComponent" city={city} country={country} icon={icon.replace('d','n')} main={main} description={description} tempCelsius={tempCelsius} feelsLike= {feelsLike}/>
           <OtherInfo className="ForecastComponent" windSpeed={windSpeed} humidity={humidity} seaLevel={seaLevel}/>
-      </div>
+      </div> : <Loader/> }
     </div>
   );
 }

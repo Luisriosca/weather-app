@@ -18,6 +18,7 @@
     align-self: center;
 }
 button{
+    margin-top: 16px;
     background-color: var(--greyLight-1);
     width: 50%;
     height: 2rem;
@@ -34,8 +35,6 @@ button:hover{
 }
 
 button:active{
-    /* background-color: #bec8e4; */
-    /* border: #F9FFFF 1px solid; */
     box-shadow: inset 9.91px 9.91px 15px #bec8e4, inset -9.91px -9.91px 15px whitesmoke;
 
 }
