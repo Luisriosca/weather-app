@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Getting Started with the Weather App 🌤️
+<hr>
+Welcome to the weather-app by luisrioscode repository👨🏻‍💻 If you want to copy and execute this project in your localhost you may check the "Repo Instructions".
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**If you want to preview this app deployed you can visit** <a href="https://weatherapp-byluisrioscode.netlify.app/">this URL↗️</a> 
 
-## Available Scripts
+## Interface Preview:
+[![weather-App-SS.png](https://i.postimg.cc/J7dRjyfM/weather-App-SS.png)](https://postimg.cc/fkm4NbWr)
 
-In the project directory, you can run:
+## Description of the project
+- This project was made using react, axios and pure CSS.
 
-### `npm start`
+- The entirely project was styled inspired by the neumorphic trend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- This project has the purpose of beef up my abilities on:
+<br/>
+    1. React
+    2. JSX
+    3. Components
+    4. Props
+    5. Hooks
+    6. UseState
+    7. CSS
+    8. HTTP petitions
+    9. Axios
+<br/>
+- The weather information is getting in real time using the **GEOLOCATION BROWSER API**. When the user authorizes sharing his position, a call is made using axios to <a href="https://openweathermap.org/api">Open Weather Api</a> using the GET method with the ``` latitude``` and the ```longitude``` previusly obtained.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- The call its made with a custom service called "getWeatherInfo" on APP.js using the useEffect hook.
 
-### `npm test`
+- After the  petition, the api returns the data in JSON format like this:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```JSON                        
+{
+  "coord": {
+    "lon": -122.08,
+    "lat": 37.39
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 282.55,
+    "feels_like": 281.86,
+    "temp_min": 280.37,
+    "temp_max": 284.26,
+    "pressure": 1023,
+    "humidity": 100
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 1.5,
+    "deg": 350
+  },
+  "clouds": {
+    "all": 1
+  },
+  "dt": 1560350645,
+  "sys": {
+    "type": 1,
+    "id": 5122,
+    "message": 0.0139,
+    "country": "US",
+    "sunrise": 1560343627,
+    "sunset": 1560396563
+  },
+  "timezone": -25200,
+  "id": 420006353,
+  "name": "Mountain View",
+  "cod": 200
+  }                         
+                        
+```
+
+- And finally the important variables are saved using the state hook and rendered using custom components.
+
+<hr>
+## Repo Instrutions
+If you want to test my code in your pc, yo need tu use the next instructions  
+
+### `git clone`
+For download all the files of the repository.
+### `npm install`
+For install all the dependencies
+### `npm star`
+For start the project in local host.
 
 ### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
