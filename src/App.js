@@ -17,30 +17,37 @@ function App() {
   const [description, setDescription] = useState('');
   const [icon, setIcon] = useState('');  
   const [tempCelsius, setTempCelsius] = useState('');  
-  // const [tempFarenheit, setFarenheit] = useState('');
+  const [tempFarenheit, setFarenheit] = useState('');
   const [feelsLike, setFeelsLike] = useState('');
+  const [feelsLikeFar, setFeelsLikeFar] = useState('');
   //*---------------Other data-------------------
   const [windSpeed, setWindSpeed] = useState('');
   const [humidity, setHumidity] = useState('');
   const [seaLevel, setSeaLevel] = useState('');
   //*---------------Indicators-------------------
   const [isDataLoaded, setIsDataLoad] = useState(false)
-   
+  
+  const getFarenheitValue = (celsiusValue) => {
+    const result = (celsiusValue * 9/5) + 32;
+    return result 
+  }
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       getWeatherInfo(position.coords.latitude, position.coords.longitude).then((response) => {
-        console.log(response.data);
         setIsDataLoad(true)
         setCity(response.data['name'])
         setCountry(response.data['sys']['country'])
         setMain(response.data['weather'][0]['main'])
         setDescription(response.data['weather'][0]['description'])
         setIcon(response.data['weather'][0]['icon'])
-        setFeelsLike(response.data['main']['feels_like'])
+        setFeelsLike(Math.floor(response.data['main']['feels_like']))
         setWindSpeed(response.data['wind']['speed'])
         setHumidity(response.data['main']['humidity'])
         setSeaLevel(response.data['main']['sea_level'])
-        setTempCelsius(response.data['main']['temp'])
+        setTempCelsius(Math.floor(response.data['main']['temp']))
+        setFarenheit(Math.ceil(getFarenheitValue(tempCelsius)))
+        setFeelsLikeFar(Math.floor(getFarenheitValue(feelsLike)))
       })
     })
   }, [])
@@ -48,7 +55,7 @@ function App() {
   return (
     <div className="App">
       {isDataLoaded ? <div className="container">
-          <CurrentWeatherBox className="TitleComponent" city={city} country={country} icon={icon.replace('d','n')} main={main} description={description} tempCelsius={tempCelsius} feelsLike= {feelsLike}/>
+          <CurrentWeatherBox className="TitleComponent" city={city} country={country} icon={icon.replace('d','n')} main={main} description={description} tempCelsius={tempCelsius} feelsLike= {feelsLike} farValue={tempFarenheit} farFeels={feelsLikeFar}/>
           <OtherInfo className="ForecastComponent" windSpeed={windSpeed} humidity={humidity} seaLevel={seaLevel}/>
       </div> : <Loader/> }
     </div>
