@@ -13,7 +13,7 @@ Welcome to the weather-app by luisrioscode repository👨🏻‍💻 If you want
 - The entirely project was styled inspired by the neumorphic trend.
 
 - This project has the purpose of beef up my abilities on:
-<br/>
+
     1. React
     2. JSX
     3. Components
@@ -23,7 +23,7 @@ Welcome to the weather-app by luisrioscode repository👨🏻‍💻 If you want
     7. CSS
     8. HTTP petitions
     9. Axios
-<br/>
+
 - The weather information is getting in real time using the **GEOLOCATION BROWSER API**. When the user authorizes sharing his position, a call is made using axios to <a href="https://openweathermap.org/api">Open Weather Api</a> using the GET method with the ``` latitude``` and the ```longitude``` previusly obtained.
 
 - The call its made with a custom service called "getWeatherInfo" on APP.js using the useEffect hook.
